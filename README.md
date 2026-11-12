@@ -10,6 +10,35 @@ A lightweight VS Code extension that periodically saves dirty text documents in 
 - Configure interval in VS Code Settings (`easyAutosave.intervalMinutes`, 1–1440 minutes).
 - No file watching or background polling between save passes; one timer and a small number of VS Code event subscriptions are used.
 
+## Installation
+
+The extension is not published to the VS Code Marketplace yet. To install it from this repository:
+
+1. Clone the repository and open a terminal in its folder:
+
+   ```sh
+   git clone https://github.com/isidrolv/easy-autosave-plugin.git
+   cd easy-autosave-plugin
+   ```
+
+2. Install the VS Code Extension Manager CLI if needed, then package the extension:
+
+   ```sh
+   npm install --global @vscode/vsce
+   vsce package
+   ```
+
+   This creates `easy-autosave-plugin-0.1.0.vsix` in the project folder.
+
+3. Install the generated VSIX using either method:
+
+   - **Command line:** `code --install-extension easy-autosave-plugin-0.1.0.vsix`
+   - **VS Code UI:** open the Extensions view, select **...** → **Install from VSIX...**, and choose the generated file.
+
+4. Reload VS Code if prompted. Easy AutoSave is enabled by default. To verify or configure it, open Settings and search for **Easy AutoSave**.
+
+For development without packaging, open the project folder in VS Code and press **F5** to launch an Extension Development Host; this does not install the extension into your regular VS Code profile.
+
 ## Configuration
 
 Settings are contributed by the extension and are stored in the normal VS Code user/workspace `settings.json` (or can be set in the Settings UI). For example:
