@@ -5,6 +5,10 @@
   "version": "0.1.0",
   "publisher": "easy-autosave",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/isidrolv/easy-autosave-plugin.git"
+  },
   "engines": { "vscode": "^1.85.0" },
   "categories": ["Other"],
   "activationEvents": ["onStartupFinished"],

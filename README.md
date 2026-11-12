@@ -24,7 +24,7 @@ The extension is not published to the VS Code Marketplace yet. To install it fro
 2. Install the VS Code Extension Manager CLI if needed, then package the extension:
 
    ```sh
-   npm install --global @vscode/vsce
+   npm install --global --allow-scripts=@vscode/vsce-sign @vscode/vsce
    vsce package
    ```
 
