@@ -1,0 +1,35 @@
+{
+  "name": "easy-autosave-plugin",
+  "displayName": "Easy AutoSave",
+  "description": "Quietly saves dirty text files on a configurable timer.",
+  "version": "0.1.0",
+  "publisher": "easy-autosave",
+  "license": "MIT",
+  "engines": { "vscode": "^1.85.0" },
+  "categories": ["Other"],
+  "activationEvents": ["onStartupFinished"],
+  "main": "./src/extension.js",
+  "contributes": {
+    "commands": [
+      { "command": "easyAutosave.toggle", "title": "Easy AutoSave: Toggle" }
+    ],
+    "configuration": {
+      "title": "Easy AutoSave",
+      "properties": {
+        "easyAutosave.enabled": {
+          "type": "boolean", "default": true,
+          "description": "Enable periodic saving of dirty text files."
+        },
+        "easyAutosave.intervalMinutes": {
+          "type": "number", "default": 5, "minimum": 1, "maximum": 1440,
+          "description": "Minutes between automatic save passes."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "test": "node --test",
+    "lint": "node --check src/extension.js && node --check src/autosave.js"
+  },
+  "devDependencies": {}
+}
